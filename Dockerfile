@@ -1,5 +1,6 @@
 FROM ubuntu:focal
 WORKDIR /app 
+ARG DEBIAN_FRONTEND=noninteractive
 RUN apt-get update -y
 RUN apt-get -y install wget
 RUN wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb
