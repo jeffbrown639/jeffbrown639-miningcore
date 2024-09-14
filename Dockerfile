@@ -11,5 +11,5 @@ RUN apt-get -y install dotnet-sdk-6.0 git cmake ninja-build build-essential libs
 COPY . .
 WORKDIR /app/src/Miningcore
 RUN dotnet publish -c Release --framework net6.0 -o ../../build
-
-CMD ["/app/build/Miningcore", "-c", "config.json" ]
+WORKDIR /app/build
+CMD ["/app/build/Miningcore", "-c", "/app/config.json" ]
