@@ -1,7 +1,7 @@
 FROM mcr.microsoft.com/dotnet/sdk:6.0-jammy as BUILDER
 WORKDIR /app 
-RUN apt-get update && \
-    apt-get -y install cmake ninja-build build-essential libssl-dev pkg-config libboost-all-dev libsodium-dev libzmq3-dev golang-go libgmp-dev
+RUN apt-get update -y
+RUN apt-get -y install dotnet6 git cmake ninja-build build-essential libssl-dev pkg-config libboost-all-dev libsodium-dev libzmq5-dev libgmp-dev
 COPY . .
 
 WORKDIR /app/src/Miningcore
